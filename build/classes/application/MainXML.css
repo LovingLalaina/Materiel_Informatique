@@ -1,0 +1,48 @@
+
+.mainFxmlClass
+{
+    
+}
+
+#Header
+{
+    -fx-background-color : #4d5463;
+}
+
+#Titre
+{
+    -fx-text-fill : gold;
+}
+
+#FormulaireMateriel, #FormulaireClient, #FormulaireAchat, #FormulaireListe, #FormulaireFacture, #FormulaireChiffreAffaire, #DivTableMateriel, #DivTableClient, #DivTableAchat,#DivTableListe, #DivTableFacture, #DivTableChiffreAffaire
+{
+    -fx-border-color : grey;
+    -fx-background-color : #e4e4e4;
+}
+
+#AjouterMateriel, #AjouterClient, #AjouterAchat,#AfficherListe, #Facturer, #AfficherChiffreAffaire, #AfficherHistogramme
+{
+    -fx-opacity:0.8;
+    -fx-text-fill : white;
+    -fx-background-color : #0b824e;
+}
+
+#SupprimerMateriel, #SupprimerClient, #SupprimerAchat
+{
+    -fx-opacity:0.8;
+    -fx-text-fill : white;
+    -fx-background-color : red;
+}
+
+#RechercherClient
+{
+    -fx-opacity:0.8;
+    -fx-text-fill : white;
+    -fx-background-color: #3013ff;
+}
+
+#RechercherClient:hover, #AjouterMateriel:hover, #AjouterClient:hover, #AjouterAchat:hover, #SupprimerMateriel:hover , #SupprimerClient:hover , #SupprimerAchat:hover , #AfficherListe:hover, #Facturer:hover, #AfficherChiffreAffaire:hover, #AfficherHistogramme:hover
+{
+    -fx-opacity:1;
+    -fx-transition:0.5;
+}

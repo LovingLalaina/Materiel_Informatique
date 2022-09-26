@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="FenetrePrincipale" fx:id="FenetrePrincipale" prefHeight="599.0" prefWidth="761.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainXMLController">
+    <stylesheets>
+        <URL value="@MainXML.css" />
+    </stylesheets>
+   <children>
+      <Pane id="Header" fx:id="Header" prefHeight="67.0" prefWidth="761.0">
+         <children>
+            <Label id="Titre" fx:id="Titre" layoutX="30.0" layoutY="-1.0" prefHeight="67.0" prefWidth="269.0" text="HighTech Market">
+               <font>
+                  <Font name="Comic Sans MS" size="31.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <TabPane layoutY="67.0" prefHeight="533.0" prefWidth="761.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab closable="false" text="Matériels">
+            <content>
+              <AnchorPane id="PageMateriel" fx:id="PageMateriel" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Pane id="FormulaireMateriel" fx:id="FormulaireMateriel" layoutX="14.0" layoutY="14.0" prefHeight="449.0" prefWidth="237.0">
+                           <children>
+                              <TextField id="DesignMateriel" fx:id="DesignMateriel" layoutX="18.0" layoutY="50.0" prefHeight="34.0" prefWidth="201.0" promptText="Design" />
+                              <TextField id="PrixUnitaire" fx:id="PrixUnitaire" layoutX="18.0" layoutY="150.0" prefHeight="34.0" prefWidth="201.0" promptText="Prix Unitaire" />
+                              <TextField id="StockMateriel" fx:id="StockMateriel" layoutX="18.0" layoutY="250.0" prefHeight="34.0" prefWidth="201.0" promptText="Stock" />
+                              <Button id="AjouterMateriel" fx:id="AjouterMateriel" layoutX="47.0" layoutY="340.0" mnemonicParsing="false" onAction="#ajouterMateriel" prefHeight="38.0" prefWidth="144.0" text="AJOUTER">
+                                 <font>
+                                    <Font name="Calibri" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Button id="SupprimerMateriel" layoutX="47.0" layoutY="398.0" mnemonicParsing="false" onAction="#supprimerMateriel" prefHeight="38.0" prefWidth="144.0" text="SUPPRIMER">
+                                 <font>
+                                    <Font name="Calibri" size="15.0" />
+                                 </font>
+                              </Button>
+                              <TextField fx:id="numero_materiel" layoutX="23.0" layoutY="9.0" prefHeight="34.0" prefWidth="201.0" promptText="Design" visible="false" />
+                           </children>
+                        </Pane>
+                        <Pane id="DivTableMateriel" fx:id="DivTableMateriel" layoutX="267.0" layoutY="14.0" prefHeight="449.0" prefWidth="477.0">
+                           <children>
+                              <TableView id="TableMateriel" fx:id="TableMateriel" editable="true" layoutX="12.0" layoutY="17.0" prefHeight="421.0" prefWidth="453.0" tableMenuButtonVisible="true">
+                                <columns>
+                                  <TableColumn id="ColonneMaterielNumero" fx:id="ColonneMaterielNumero" editable="false" prefWidth="52.0" text="Numero" />
+                                  <TableColumn id="ColonneMaterielDesign" fx:id="ColonneMaterielDesign" onEditCommit="#modifierMaterielDesign" prefWidth="152.0" text="Design" />
+                                    <TableColumn id="ColonneMaterielPrixUnitaire" fx:id="ColonneMaterielPrixUnitaire" onEditCommit="#modifierMaterielPrixUnitaire" prefWidth="87.0" text="Prix Unitaire" />
+                                    <TableColumn id="ColonneMaterielStock" fx:id="ColonneMaterielStock" onEditCommit="#modifierMaterielStock" prefWidth="64.0" text="Stock" />
+                                    <TableColumn id="ColonneMaterielTotalVendu" fx:id="ColonneMaterielTotalVendu" prefWidth="97.0" text="Total Vendu" visible="false" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab closable="false" text="Clients">
+            <content>
+              <AnchorPane id="PageClient" fx:id="PageClient" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Pane id="FormulaireClient" fx:id="FormulaireClient" layoutX="14.0" layoutY="14.0" prefHeight="449.0" prefWidth="237.0">
+                           <children>
+                              <TextField id="PrenomClient" fx:id="PrenomClient" layoutX="18.0" layoutY="150.0" prefHeight="34.0" prefWidth="201.0" promptText="Prénom" />
+                              <TextField id="AdresseMail" fx:id="AdresseMail" layoutX="18.0" layoutY="250.0" prefHeight="34.0" prefWidth="201.0" promptText="E-mail ou Tel" />
+                              <Button id="AjouterClient" fx:id="AjouterClient" layoutX="47.0" layoutY="340.0" mnemonicParsing="false" onAction="#ajouterClient" prefHeight="38.0" prefWidth="144.0" text="INSCRIRE">
+                                 <font>
+                                    <Font name="Calibri" size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </Pane>
+                        <Pane id="DivTableClient" fx:id="DivTableClient" layoutX="267.0" layoutY="14.0" prefHeight="449.0" prefWidth="477.0">
+                           <children>
+                              <TableView id="TableClient" fx:id="TableClient" editable="true" layoutX="12.0" layoutY="51.0" prefHeight="387.0" prefWidth="453.0">
+                                 <columns>
+                                    <TableColumn id="ColonneClientNumero" fx:id="ColonneClientNumero" editable="false" prefWidth="90.0" text="Numero" />
+                                    <TableColumn id="ColonneClientNom" fx:id="ColonneClientNom" onEditCommit="#modifierClientNom" prefWidth="179.0" text="Nom" />
+                                    <TableColumn id="ColonneClientAdresseMail" fx:id="ColonneClientAdresseMail" onEditCommit="#modifierClientAdresseMail" prefWidth="183.0" text="E-mail ou Tel" />
+                                 </columns>
+                              </TableView>
+                              <Button id="RechercherClient" fx:id="RechercherClient" layoutX="334.0" layoutY="11.0" mnemonicParsing="false" onAction="#rechercherClient" prefHeight="33.0" prefWidth="131.0" text="RECHERCHER" />
+                              <TextField id="RechercheClient" fx:id="RechercheClient" layoutX="100.0" layoutY="14.0" prefHeight="30.0" prefWidth="206.0" promptText="Numero ou Nom" />
+                           </children>
+                        </Pane>
+                        <TextField id="NomClient" fx:id="NomClient" layoutX="28.0" layoutY="60.0" prefHeight="34.0" prefWidth="201.0" promptText="Nom" />
+                        <Button id="SupprimerClient" layoutX="61.0" layoutY="412.0" mnemonicParsing="false" onAction="#supprimerClient" prefHeight="38.0" prefWidth="144.0" text="SUPPRIMER">
+                           <font>
+                              <Font name="Calibri" size="15.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="numero_client" layoutX="33.0" layoutY="19.0" prefHeight="34.0" prefWidth="201.0" promptText="Design" visible="false" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab closable="false" text="Achats">
+               <content>
+                  <AnchorPane id="PageAchat" fx:id="PageAchat" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Pane id="FormulaireAchat" fx:id="FormulaireAchat" layoutX="14.0" layoutY="14.0" prefHeight="449.0" prefWidth="237.0">
+                           <children>
+                              <TextField id="NumeroClient" fx:id="NumeroClient" layoutX="18.0" layoutY="25.0" prefHeight="34.0" prefWidth="201.0" promptText="Numero Client" />
+                              <TextField id="NumeroMateriel" fx:id="NumeroMateriel" layoutX="18.0" layoutY="125.0" prefHeight="34.0" prefWidth="201.0" promptText="Numero Matériel" />
+                              <TextField id="Quantite" fx:id="Quantite" layoutX="18.0" layoutY="213.0" prefHeight="34.0" prefWidth="201.0" promptText="Quantité" />
+                              <Button id="AjouterAchat" fx:id="AjouterAchat" layoutX="47.0" layoutY="350.0" mnemonicParsing="false" onAction="#ajouterAchat" prefHeight="38.0" prefWidth="144.0" text="ACHETER">
+                                 <font>
+                                    <Font name="Calibri" size="15.0" />
+                                 </font>
+                              </Button>
+                              <DatePicker id="DateAchat" fx:id="DateAchat" layoutX="27.0" layoutY="292.0" prefHeight="28.0" prefWidth="184.0" />
+                              <Button id="SupprimerAchat" layoutX="46.0" layoutY="402.0" mnemonicParsing="false" onAction="#supprimerAchat" prefHeight="38.0" prefWidth="144.0" text="SUPPRIMER">
+                                 <font>
+                                    <Font name="Calibri" size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </Pane>
+                        <Pane id="DivTableAchat" fx:id="DivTableAchat" layoutX="267.0" layoutY="14.0" prefHeight="449.0" prefWidth="477.0">
+                           <children>
+                              <TableView id="TableAchat" fx:id="TableAchat" editable="true" layoutX="12.0" layoutY="17.0" prefHeight="421.0" prefWidth="453.0">
+                                 <columns>
+                                    <TableColumn id="ColonneAchatNumeroClient" fx:id="ColonneAchatNumeroClient" editable="false" prefWidth="101.0" text="Numero Client" />
+                                    <TableColumn id="ColonneAchatNumeroMateriel" fx:id="ColonneAchatNumeroMateriel" editable="false" prefWidth="119.0" text="Numero Materiel" />
+                                    <TableColumn id="ColonneAchatQuantite" fx:id="ColonneAchatQuantite" onEditCommit="#modifierAchatQuantite" prefWidth="106.0" text="Quantité" />
+                                    <TableColumn id="ColonneAchatDateAchat" fx:id="ColonneAchatDateAchat" onEditCommit="#modifierAchatDateAchat" prefWidth="126.0" text="Date d'achat" />
+                                    <TableColumn id="ColonneAchatId" fx:id="ColonneAchatId" prefWidth="126.0" text="Date d'achat" visible="false" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </Pane>
+                        <TextField fx:id="numero_achat" layoutX="33.0" layoutY="19.0" prefHeight="34.0" prefWidth="201.0" promptText="Design" visible="false" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab closable="false" text="Liste matériels achetés">
+               <content>
+                  <AnchorPane id="PageListe" fx:id="PageListe" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Pane id="FormulaireListe" fx:id="FormulaireListe" layoutX="14.0" layoutY="14.0" prefHeight="449.0" prefWidth="237.0">
+                           <children>
+                              <TextField id="NumeroClientListe" fx:id="NumeroClientListe" layoutX="18.0" layoutY="30.0" prefHeight="34.0" prefWidth="201.0" promptText="Numero Client" />
+                              <Button id="AfficherListe" fx:id="AfficherListe" layoutX="47.0" layoutY="380.0" mnemonicParsing="false" onAction="#afficherListe" prefHeight="38.0" prefWidth="144.0" text="AFFICHER">
+                                 <font>
+                                    <Font name="Calibri" size="15.0" />
+                                 </font>
+                              </Button>
+                              <TextField id="AnneeListe" fx:id="AnneeListe" layoutX="18.0" layoutY="310.0" prefHeight="34.0" prefWidth="201.0" promptText="Année" />
+                              <RadioButton id="fuck" fx:id="RadioDeuxDates" layoutX="12.0" layoutY="99.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="213.0" selected="true" text="Entre deux dates :" underline="true" />
+                              <DatePicker id="DateDebut" fx:id="DateDebut" layoutX="12.0" layoutY="145.0" prefHeight="26.0" prefWidth="93.0" />
+                              <DatePicker id="DateFin" fx:id="DateFin" layoutX="131.0" layoutY="145.0" prefHeight="26.0" prefWidth="93.0" />
+                              <RadioButton id="RadioMois" fx:id="RadioMois" layoutX="13.0" layoutY="186.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="213.0" text="Le mois de :" underline="true" />
+                              <ComboBox id="MoisListe" fx:id="MoisListe" layoutX="30.0" layoutY="229.0" prefHeight="26.0" prefWidth="179.0" promptText="Mois" />
+                              <RadioButton id="RadioAnnee" fx:id="RadioAnnee" layoutX="13.0" layoutY="268.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="213.0" text="Année :" underline="true" />
+                           </children>
+                        </Pane>
+                        <Pane id="DivTableListe" fx:id="DivTableListe" layoutX="267.0" layoutY="14.0" prefHeight="449.0" prefWidth="477.0">
+                           <children>
+                              <TableView id="TableListe" fx:id="TableListe" layoutX="12.0" layoutY="17.0" prefHeight="421.0" prefWidth="453.0">
+                                 <columns>
+                                    <TableColumn id="ColonneListeDesign" fx:id="ColonneListeDesign" editable="false" prefWidth="124.0" text="Designation" />
+                                    <TableColumn id="ColonneListePrixUnitaire" fx:id="ColonneListePrixUnitaire" editable="false" prefWidth="125.0" text="Prix Unitaire" />
+                                    <TableColumn id="ColonneListeQuantite" fx:id="ColonneListeQuantite" editable="false" prefWidth="72.0" text="Quantité" />
+                                    <TableColumn id="ColonneListeMontant" fx:id="ColonneListeMontant" prefWidth="131.0" text="Montant" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab closable="false" text="Facture">
+               <content>
+                  <AnchorPane id="PageFacture" fx:id="PageFacture" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Pane id="FormulaireFacture" fx:id="FormulaireFacture" layoutX="14.0" layoutY="14.0" prefHeight="449.0" prefWidth="237.0">
+                           <children>
+                              <TextField id="NumeroClientFacture" fx:id="NumeroClientFacture" layoutX="18.0" layoutY="50.0" prefHeight="34.0" prefWidth="201.0" promptText="Numero Client" />
+                              <TextField id="NomClientFacture" fx:id="NomClientFacture" disable="true" layoutX="18.0" layoutY="150.0" prefHeight="34.0" prefWidth="201.0" promptText="Nom Client" />
+                              <TextField id="AnneeFacture" fx:id="AnneeFacture" layoutX="18.0" layoutY="250.0" prefHeight="34.0" prefWidth="201.0" promptText="Année" />
+                              <Button id="Facturer" fx:id="Facturer" layoutX="47.0" layoutY="340.0" mnemonicParsing="false" onAction="#facturer" prefHeight="38.0" prefWidth="144.0" text="FACTURER">
+                                 <font>
+                                    <Font name="Calibri" size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </Pane>
+                        <Pane id="DivTableFacture" fx:id="DivTableFacture" layoutX="267.0" layoutY="14.0" prefHeight="449.0" prefWidth="477.0">
+                           <children>
+                              <TableView id="TableFacture" fx:id="TableFacture" layoutX="12.0" layoutY="17.0" prefHeight="279.0" prefWidth="453.0">
+                                 <columns>
+                                    <TableColumn id="ColonneFactureDesign" fx:id="ColonneFactureDesign" editable="false" prefWidth="124.0" text="Designation" />
+                                    <TableColumn id="ColonneFacturePrixUnitaire" fx:id="ColonneFacturePrixUnitaire" editable="false" prefWidth="125.0" text="Prix Unitaire" />
+                                    <TableColumn id="ColonneFactureQuantite" fx:id="ColonneFactureQuantite" editable="false" prefWidth="72.0" text="Quantité" />
+                                    <TableColumn id="ColonneFactureMontant" fx:id="ColonneFactureMontant" prefWidth="131.0" text="Montant" />
+                                 </columns>
+                              </TableView>
+                              <Label layoutX="25.0" layoutY="339.0" prefHeight="33.0" prefWidth="386.0" text="Arretée la présente facture à la somme de">
+                                 <font>
+                                    <Font name="SimSun" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label id="MontantLettre" fx:id="MontantLettre" layoutX="1.0" layoutY="366.0" prefHeight="33.0" prefWidth="475.0">
+                                 <font>
+                                    <Font name="SimSun" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label id="TotalMontant" fx:id="TotalMontant" layoutX="299.0" layoutY="298.0" prefHeight="41.0" prefWidth="164.0">
+                                 <font>
+                                    <Font name="Ebrima" size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="201.0" layoutY="298.0" prefHeight="41.0" prefWidth="90.0" text="TOTAL :" underline="true">
+                                 <font>
+                                    <Font name="Ebrima" size="23.0" />
+                                 </font>
+                              </Label>
+                              <Label id="MontantLettreSuite" fx:id="MontantLettreSuite" layoutX="9.0" layoutY="402.0" prefHeight="33.0" prefWidth="475.0">
+                                 <font>
+                                    <Font name="SimSun" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab closable="false" text="Chiffre d'affaire">
+               <content>
+                  <AnchorPane id="PageChiffreAffaire" fx:id="PageChiffreAffaire" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Pane id="FormulaireChiffreAffaire" fx:id="FormulaireChiffreAffaire" layoutX="14.0" layoutY="14.0" prefHeight="449.0" prefWidth="237.0">
+                           <children>
+                              <TextField id="AnneeChiffreAffaire" fx:id="AnneeChiffreAffaire" layoutX="18.0" layoutY="50.0" prefHeight="34.0" prefWidth="201.0" promptText="Année" />
+                              <Button id="AfficherChiffreAffaire" fx:id="AfficherChiffreAffaire" layoutX="18.0" layoutY="150.0" mnemonicParsing="false" onAction="#afficherChiffreAffaire" prefHeight="44.0" prefWidth="201.0" text="AFFICHER (Tableau)">
+                                 <font>
+                                    <Font name="Calibri" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Button id="AfficherHistogramme" fx:id="AfficherHistogramme" layoutX="18.0" layoutY="230.0" mnemonicParsing="false" onAction="#afficherHistogramme" prefHeight="44.0" prefWidth="201.0" text="AFFICHER (Histogramme)">
+                                 <font>
+                                    <Font name="Calibri" size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </Pane>
+                        <Pane id="DivTableChiffreAffaire" fx:id="DivTableChiffreAffaire" layoutX="267.0" layoutY="14.0" prefHeight="449.0" prefWidth="477.0">
+                           <children>
+                              <TableView id="TableChiffreAffaire" fx:id="TableChiffreAffaire" layoutX="12.0" layoutY="17.0" prefHeight="421.0" prefWidth="453.0" visible="false">
+                                 <columns>
+                                    <TableColumn id="ColonneChiffreAffaireNumeroClient" fx:id="ColonneChiffreAffaireNumeroClient" editable="false" prefWidth="101.0" text="Numero Client" />
+                                    <TableColumn id="ColonneChiffreAffaireNomClient" fx:id="ColonneChiffreAffaireNomClient" editable="false" prefWidth="206.0" text="Nom Client" />
+                                    <TableColumn id="ColonneChiffreAffaireChiffreAffaire" fx:id="ColonneChiffreAffaireChiffreAffaire" editable="false" prefWidth="145.0" text="Chiffre d'affaire" />
+                                 </columns>
+                              </TableView>
+                              <BarChart id="Histogramme" fx:id="Histogramme" layoutX="12.0" layoutY="17.0" prefHeight="421.0" prefWidth="453.0" title="Chiffre d'Affaire">
+                                <xAxis>
+                                  <CategoryAxis id="AxeClient" fx:id="AxeClient" label="Clients" side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis id="AxeChiffreAffaire" fx:id="AxeChiffreAffaire" label="Chiffre d'affaire" side="LEFT" />
+                                </yAxis>
+                              </BarChart>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
